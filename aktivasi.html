@@ -15,123 +15,157 @@
         }
 
         body {
-            background: linear-gradient(135deg, #1a1a2e 2%, #16213e 100%);
-            min-height: 100vh;
+            /* ✅ LATAR BELAKANG WARNA TIKTOK */
+            background: linear-gradient(135deg, #000000, #1a1a1a, #ff0050, #1a1a1a);
+            background-size: 400% 400%;
+            animation: gradasiTikTok 1000s ease infinite;
+             
+            height: 100vh;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
-            padding: 15px;
-            color: white;
-}
-
+            margin: auto;
+            padding: 0 20px; /* Biar pas di HP ada jarak pinggir */
         }
 
-        /* Bagian Atas */
+        @keyframes gradasiTikTok {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* ✅ BAGIAN ATAS: DIUBAH KE TENGAH */
         .header {
             display: flex;
             align-items: center;
-            gap: 4px;
+            justify-content: center; /* <-- TULISAN KE TENGAH */
+            gap: 8px;
             margin-bottom: 20px;
-            align-self: flex-start;
+            width: 100%; /* Penuhi lebar biar justify bekerja */
         }
 
         .logo {
-            font-size: 30px;
-            color: white;
+            font-size: 20px;
+            color: #ffffff;
+            text-shadow: 0 0 10px #ff0050;
         }
 
         .title-app {
             font-size: 18px;
             font-weight: bold;
+            color: #ffffff;
         }
 
         .info-text {
-            color: #4fc3f7;
+            color: #25f4ee;
             font-size: 14px;
             margin-bottom: 5px;
             display: flex;
             align-items: center;
+            justify-content: center; /* <-- TULISAN KE TENGAH */
             gap: 6px;
-            align-self: flex-start;
+            width: 100%;
+        }
+
+        .limit-box {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center; /* <-- ANGKA LIMIT KE TENGAH */
+            gap: 4px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .text-lg {
+            color: #ffffff;
         }
 
         .limit-amount {
-            font-size: 70px;
+            font-size: 60px;
             font-weight: bold;
-            color: #ff4081;
+            color: #ff0050;
             line-height: 1;
-            margin-bottom: 0px;
+            text-shadow: 0 0 15px rgba(255, 0, 80, 0.5);
         }
 
         .limit-label {
-            font-size: 20px;
-            margin-bottom: 20px;
+            font-size: 22px;
+            color: #ffffff;
         }
 
         .title-main {
             font-size: 16px;
             font-weight: bold;
             margin-bottom: 8px;
-            align-self: flex-start;
+            text-align: center; /* <-- TULISAN KE TENGAH */
+            width: 100%;
+            color: #ffffff;
         }
 
         .desc-text {
             font-size: 12px;
-            color: #ccc;
+            color: #e0e0e0;
             margin-bottom: 20px;
             max-width: 280px;
-            align-self: flex-start;
+            text-align: center; /* <-- DESKRIPSI KE TENGAH */
         }
 
         .btn-info {
-            background: rgba(255,255,255,0.1);
-            border: none;
-            color: #4fc3f7;
+            background: rgba(255, 0, 80, 0.15);
+            border: 1px solid rgba(37, 244, 238, 0.3);
+            color: #25f4ee;
             padding: 8px 15px;
             border-radius: 20px;
             font-size: 12px;
             margin-bottom: 25px;
-            display: flex; /* <-- UBAH DISINI */
+            display: flex;
             align-items: center;
-            justify-content: flex-start; /* <-- TULISAN KE KIRI */
+            justify-content: center; /* <-- TULISAN TOMBOL INFO KE TENGAH */
             gap: 6px;
             width: fit-content;
-            text-align: left;
+            text-align: center;
+            transition: all 0.3s ease;
         }
 
-        /* Style Tombol Merah */
+        .btn-info:hover {
+            background: rgba(37, 244, 238, 0.25);
+            box-shadow: 0 0 10px rgba(37, 244, 238, 0.4);
+        }
+
+        /* Style Tombol Utama */
         .menu-btn {
             width: 80%;
             padding: 12px 15px;
-            background-color: #e53935;
+            background-color: #ff0050;
             color: white;
             border: none;
             border-radius: 8px;
             font-size: 14px;
             font-weight: bold;
-            display: flex;
-            justify-content: center; /* <-- UBAH KE CENTER */
+            display: inline-flex;
+            justify-content: center;
             align-items: center;
-            position: relative; /* <-- Buat panah */
+            position: relative;
             margin-bottom: 10px;
             cursor: pointer;
             transition: all 0.3s ease;
-
-            /* Efek Cahaya Putih */
-            box-shadow: 0 0 5px rgba(255, 255, 255, 0.6), 
-                        0 0 5px rgba(255, 255, 255, 0.1), 
-                        0 0 10px rgba(255, 255, 255, 0.1);
+            box-shadow: 5px 5px 8px grey; 
+                        
         }
 
         .menu-btn:hover {
-            background-color: #d32f2f;
-            transform: scale(1.01);
+            background-color: #d60045;
+            transform: scale(1.02);
+            box-shadow: 0 0 18px rgba(255, 0, 80, 0.8), 
+                        0 0 25px rgba(37, 244, 238, 0.5);
         }
 
         .arrow-icon {
-            position: absolute; /* <-- Panah tetap di kanan */
-            right: 11px;
-            font-size: 1px;
+            position: absolute;
+            right: 15px;
+            font-size: 14px;
+            color: #ffffff;
         }
     </style>
 </head>
@@ -147,7 +181,7 @@
         <i class="fas fa-link"></i> Dapatkan Kredit Hingga
     </div>
 
-    <div style="display: flex; align-items: flex-end; gap: 4px; align-self: flex-start;">
+    <div class="limit-box">
         <span class="text-lg">Rp</span>
         <span class="limit-amount">50</span>
         <span class="limit-label">JT</span>
